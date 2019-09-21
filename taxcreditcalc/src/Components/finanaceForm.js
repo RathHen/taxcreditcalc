@@ -6,17 +6,19 @@ import PropTypes from 'prop-types';
 export class finanaceForm extends Component {
     state = {
         monthlyWage: 0,
-        monthlyRent: 0 
+        monthlyRent: 0,
+        dependents: 0
     }
 
     onSubmit = (e) => {
         e.preventDefault();
-        this.props.result.bind(this.state.monthlyWage,this.state.monthlyRent);
         this.props.result(this.state.monthlyWage, this.state.monthlyRent);
+        this.props.dependent(this.state.dependents);
     }
 
     setWage = (e) => this.setState({monthlyWage: e.target.value})
     setRent = (e) => this.setState({monthlyRent: e.target.value})
+    setDependents = (e) => this.setState({dependents: e.target.value})
 
 
     render() {
@@ -26,13 +28,19 @@ export class finanaceForm extends Component {
               <div className="field" >
                 <div style={this.getFieldStyle()}>
                   <label>Monthly Wage</label>
-                  <input type="number" name="wage" placeholder="Monthly Wage" onChange={this.setWage}/>
+                  <input type="number" name="wage" placeholder="Enter Monthly Wage" onChange={this.setWage}/>
                 </div>
               </div>
               <div className="field">
                 <div style={this.getFieldStyle()}>
-                  <label>Mothly Rent</label>
-                  <input type="number" name="rent" placeholder="Monthly Rent" onChange={this.setRent}/>
+                  <label>Monthly Rent</label>
+                  <input type="number" name="rent" placeholder="Enter Monthly Rent" onChange={this.setRent}/>
+                </div>  
+              </div>
+              <div className="field">
+                <div style={this.getFieldStyle()}>
+                  <label>Dependents</label>
+                  <input type="number" name="rent" placeholder="Enter Dependends" onChange={this.setDependents}/>
                 </div>  
               </div>
               <div style={this.getButtonStyle()}>
