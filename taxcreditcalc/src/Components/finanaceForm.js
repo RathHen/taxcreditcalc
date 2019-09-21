@@ -11,7 +11,6 @@ export class finanaceForm extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state.monthlyWage);
         this.props.result.bind(this.state.monthlyWage,this.state.monthlyRent);
         this.props.result(this.state.monthlyWage, this.state.monthlyRent);
     }
@@ -36,10 +35,18 @@ export class finanaceForm extends Component {
                   <input type="number" name="rent" placeholder="Monthly Rent" onChange={this.setRent}/>
                 </div>  
               </div>
-              <button className="ui button" type="submit">Submit</button>
+              <div style={this.getButtonStyle()}>
+                <button className="ui button" type="submit" >Submit</button>
+              </div>
             </form>
           </React.Fragment>
         )
+    }
+
+    getButtonStyle = () => {
+      return {
+        textAlign: "center"
+      }
     }
 
     getFieldStyle = () => {
@@ -47,17 +54,21 @@ export class finanaceForm extends Component {
         width: "80%",
         left: "50%",
         margin: "auto",
+        color: "#E1E1E1"
       }
     }
 
     getFormStyle = () => {
       return {
-        border: "solid #FF000",
-        width: "80%",
-        marginRgiht: "auto",
+        marginRight: "auto",
         marginLeft: "auto",
-        textAlign: "center",
         padding: "10px",
+        maxWidth: "60%",
+        background: "#93B5C6",
+        border: "solid",
+        borderWidth: "8px",
+        borderRadius: "10px",
+        borderColor: "#F0CF65"
       }
     }
 }

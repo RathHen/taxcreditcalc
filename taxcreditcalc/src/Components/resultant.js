@@ -9,9 +9,14 @@ export class resultants extends Component {
         calculated: 0,
       };
       calculate = (wage,rent) => {
-        var ratio = parseFloat(wage)/parseInt(rent);
+        var w = parseFloat(wage);
+        var r = parseFloat(rent);
+        var ratio = r/w;
         if(ratio>1.0/3){
-          return ratio*parseFloat(wage) - parseFloat(wage)*(1.0/3);
+          var annual = (ratio*w - w*(1.0/3)) * 12;
+          var dampen = annual*3.572/100000;
+          var temp = (-Math.atan(dampen-1)) + 1.2;
+          return temp*annual/1.985;
         }
     };
       result = (wage, rent) => {
@@ -42,6 +47,7 @@ export class resultants extends Component {
 
         )
       }
+  
 }
 
 export default resultants
