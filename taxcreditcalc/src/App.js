@@ -8,13 +8,10 @@ import Resultant from './Components/resultant';
 
 class App extends Component {
   state = {
-    num: 0,
+    taxCredit: 0,
   };
   result = (wage, rent) => {
-      console.log(wage);
-      console.log(rent);
-      this.state.num = parseInt(wage) + parseInt(rent);
-      console.log(this.state.num);
+      this.state.taxCredit = parseInt(wage) + parseInt(rent);
   };
   
 
