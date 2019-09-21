@@ -9,7 +9,7 @@ export class resultants extends Component {
         calculated: 0,
       };
       calculate = (wage,rent) => {
-        var ratio = ParseFloat(wage)/parseInt(rent);
+        var ratio = parseFloat(wage)/parseInt(rent);
         if(ratio>1.0/3){
           return ratio*parseFloat(wage) - parseFloat(wage)*(1.0/3);
         }
@@ -24,7 +24,7 @@ export class resultants extends Component {
       
     
       render() {
-        if(this.state.num != 0) {
+        if(this.state.num !== 0) {
             return (
                 <div>
                   <h3>{this.state.num}</h3>

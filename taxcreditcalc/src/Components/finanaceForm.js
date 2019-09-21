@@ -23,15 +23,15 @@ export class finanaceForm extends Component {
     render() {
         return (
           <React.Fragment>    
-            <form className="ui form" onSubmit={this.onSubmit}>
-              <div className="field">
-                <div className="six wide field">
+            <form className="ui form" onSubmit={this.onSubmit} style={this.getFormStyle()}>
+              <div className="field" >
+                <div style={this.getFieldStyle()}>
                   <label>Monthly Wage</label>
                   <input type="number" name="wage" placeholder="Monthly Wage" onChange={this.setWage}/>
                 </div>
               </div>
               <div className="field">
-                <div className="six wide field">
+                <div style={this.getFieldStyle()}>
                   <label>Mothly Rent</label>
                   <input type="number" name="rent" placeholder="Monthly Rent" onChange={this.setRent}/>
                 </div>  
@@ -40,6 +40,25 @@ export class finanaceForm extends Component {
             </form>
           </React.Fragment>
         )
+    }
+
+    getFieldStyle = () => {
+      return {
+        width: "80%",
+        left: "50%",
+        margin: "auto",
+      }
+    }
+
+    getFormStyle = () => {
+      return {
+        border: "solid #FF000",
+        width: "80%",
+        marginRgiht: "auto",
+        marginLeft: "auto",
+        textAlign: "center",
+        padding: "10px",
+      }
     }
 }
 
