@@ -17,7 +17,7 @@ export class resultants extends Component {
           var annual = (ratio*w - w*(1.0/3)) * 12;
           var dampen = annual*3.572/100000;
           var temp = (-Math.atan(dampen-1)) + 1.2;
-          return temp*annual/1.985;
+          return Math.round((temp*annual/1.985)*100)/100;
         }
     };
       result = (wage, rent) => {
