@@ -1,16 +1,29 @@
 import React, { Component } from 'react'
+import FinanaceForm from './Components/finanaceForm';
+
 
 export class resultants extends Component {
-
-    render() {
+    state = {
+        num: 0,
+      };
+      result = (wage, rent) => {
+          this.state.num = parseInt(wage) + parseInt(rent);
+      };
+      
+    
+      render() {
         return (
-                <div className="ui input">
-                    <input type="number" placeholder="Enter Monthly Wage"/> 
-                    <input type="number" placeholder="Enter Monthly Rent"/> 
-                </div>
-            
+    
+          <div>
+            <FinanaceForm result={this.result} num={this.state.num}/>
+          
+          <p>
+            Hello
+          </p>
+          </div>
+
         )
-    }
+      }
 }
 
 export default reusltants

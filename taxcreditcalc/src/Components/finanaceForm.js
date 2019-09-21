@@ -1,32 +1,41 @@
 import React, { Component } from 'react'
+import { thisExpression } from '@babel/types';
+import PropTypes from 'prop-types';
+
 
 export class finanaceForm extends Component {
     state = {
         monthlyWage: 0,
-        monthlyRent: 0
+        monthlyRent: 0 
     }
 
     onSubmit = (e) => {
         e.preventDefault();
-        this.props.calculate(this.state.monthlyWage, this.state.monthlyRent)
+        console.log(this.state.monthlyWage);
+        this.props.result.bind(this.state.monthlyWage,this.state.monthlyRent);
+        this.props.result(this.state.monthlyWage, this.state.monthlyRent);
     }
+
+    setWage = (e) => this.setState({monthlyWage: e.target.value})
+    setRent = (e) => this.setState({monthlyRent: e.target.value})
+
 
     render() {
         return (
-         <form class="ui form" onSubmit={this.onSubmit}>
-            <div class="field">
-              <div class="six wide field">
+         <form className="ui form" onSubmit={this.onSubmit}>
+            <div className="field">
+              <div className="six wide field">
                 <label>Monthly Wage</label>
-                <input type="number" name="wage" placeholder="Monthly Wage" value="this.state.monthlyWage"/>
+                <input type="number" name="wage" placeholder="Monthly Wage" onChange={this.setWage}/>
               </div>
             </div>
-            <div class="field">
-              <div class="six wide field">
+            <div className="field">
+              <div className="six wide field">
                 <label>Mothly Rent</label>
-                <input type="number" name="rent" placeholder="Monthly Rent" value="this.state.monthlyRent"/>
+                <input type="number" name="rent" placeholder="Monthly Rent" onChange={this.setRent}/>
               </div>  
             </div>
-            <button class="ui button" type="submit">Submit</button>
+            <button className="ui button" type="submit">Submit</button>
           </form>
         )
     }
