@@ -22,21 +22,23 @@ export class finanaceForm extends Component {
 
     render() {
         return (
-         <form className="ui form" onSubmit={this.onSubmit}>
-            <div className="field">
-              <div className="six wide field">
-                <label>Monthly Wage</label>
-                <input type="number" name="wage" placeholder="Monthly Wage" onChange={this.setWage}/>
+          <React.Fragment>    
+            <form className="ui form" onSubmit={this.onSubmit}>
+              <div className="field">
+                <div className="six wide field">
+                  <label>Monthly Wage</label>
+                  <input type="number" name="wage" placeholder="Monthly Wage" onChange={this.setWage}/>
+                </div>
               </div>
-            </div>
-            <div className="field">
-              <div className="six wide field">
-                <label>Mothly Rent</label>
-                <input type="number" name="rent" placeholder="Monthly Rent" onChange={this.setRent}/>
-              </div>  
-            </div>
-            <button className="ui button" type="submit">Submit</button>
-          </form>
+              <div className="field">
+                <div className="six wide field">
+                  <label>Mothly Rent</label>
+                  <input type="number" name="rent" placeholder="Monthly Rent" onChange={this.setRent}/>
+                </div>  
+              </div>
+              <button className="ui button" type="submit">Submit</button>
+            </form>
+          </React.Fragment>
         )
     }
 }
