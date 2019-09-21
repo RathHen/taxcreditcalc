@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Inputs from './Components/inputs';
+import FinanaceForm from './Components/finanaceForm';
 
 
 class App extends Component {
@@ -9,7 +9,7 @@ class App extends Component {
     return (
 
       <div>
-        <Inputs/>
+        <FinanaceForm/>
       </div>
     )
   }

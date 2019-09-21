@@ -5,7 +5,8 @@ export class inputs extends Component {
     render() {
         return (
                 <div className="ui input">
-                    <input type="number"  pattern="[0-9]*" placeholder="Search..."/> 
+                    <input type="number" placeholder="Enter Monthly Wage"/> 
+                    <input type="number" placeholder="Enter Monthly Rent"/> 
                 </div>
             
         )
@@ -13,4 +14,3 @@ export class inputs extends Component {
 }
 
 export default inputs
-
