@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import FinanaceForm from './Components/finanaceForm';
+import FinanaceForm from './finanaceForm';
 
 
 export class resultants extends Component {
@@ -17,13 +17,11 @@ export class resultants extends Component {
           <div>
             <FinanaceForm result={this.result} num={this.state.num}/>
           
-          <p>
-            Hello
-          </p>
+
           </div>
 
         )
       }
 }
 
-export default reusltants
+export default resultants
