@@ -1,25 +1,32 @@
 import React, { Component } from 'react'
 import { thisExpression } from '@babel/types';
 import PropTypes from 'prop-types';
+import { SSL_OP_SINGLE_DH_USE } from 'constants';
 
 
 export class finanaceForm extends Component {
     state = {
         monthlyWage: 0,
         monthlyRent: 0,
-        dependents: 0
+        dependents: 0,
+        filingJointly: true
     }
 
     onSubmit = (e) => {
         e.preventDefault();
         this.props.result(this.state.monthlyWage, this.state.monthlyRent);
         this.props.dependent(this.state.dependents);
+        // this.props.filing(this.state.filingAs);
     }
 
     setWage = (e) => this.setState({monthlyWage: e.target.value})
     setRent = (e) => this.setState({monthlyRent: e.target.value})
     setDependents = (e) => this.setState({dependents: e.target.value})
 
+    handleCheckClick = (e) => {
+      this.setState({filingJointly: !this.state.filingJointly});
+      console.log('hi');
+    }
 
     render() {
         return (
@@ -37,6 +44,29 @@ export class finanaceForm extends Component {
                   <input type="number" name="rent" placeholder="Enter Monthly Rent" onChange={this.setRent}/>
                 </div>  
               </div>
+
+
+
+            <div className="inline fields">
+                <label for="fruit">Filing As</label>
+                <div className="field">
+                  <div className="ui radio checkbox">
+                    <input type="radio" name="fruit"  value="test" checked={this.state.filingJointly}  onChange={this.handleCheckClick} className="hidden"/>
+                  <label>Jointly</label>
+                  </div>
+                </div>
+            <div className="field">
+              <div className="ui radio checkbox">
+                <input type="radio" name="fruit"  checked={this.state.filingJointly} onChange={this.handleCheckClick} className="hidden"/>
+                <label>Single</label>
+                  </div>
+                  </div>
+      
+              </div>
+
+
+
+
               <div className="field">
                 <div style={this.getFieldStyle()}>
                   <label>Dependents</label>

@@ -7,7 +7,8 @@ export class resultants extends Component {
     state = {
         num: 0,
         calculated: 0,
-        dependent: 0
+        dependent: 0,
+        filingAs: ' '
       };
       calculate = (wage,rent) => {
         var w = parseFloat(wage);
@@ -27,6 +28,10 @@ export class resultants extends Component {
       dependents = (dependentsNum) => {
         this.setState({dependent: dependentsNum});
       };
+
+      filing = (filingAns) => {
+        this.setState({filingAs: filingAns});
+      }
     
     
       render() {
@@ -43,7 +48,7 @@ export class resultants extends Component {
           
           <div>
             <React.Fragment>  
-              <FinanaceForm result={this.result} dependent={this.dependents}  />
+              <FinanaceForm result={this.result} dependent={this.dependents} filing={this.filing}  />
             </React.Fragment>
 
           </div>
