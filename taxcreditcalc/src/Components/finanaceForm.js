@@ -24,8 +24,8 @@ export class finanaceForm extends Component {
     setDependents = (e) => this.setState({dependents: e.target.value})
 
     handleCheckClick = (e) => {
-      this.setState({filingJointly: !this.state.filingJointly});
-      console.log('hi');
+      this.setState({filingJointly: !this.state.filingJointly})
+      console.log(this.state.filingJointly)
     }
 
     render() {
@@ -48,17 +48,19 @@ export class finanaceForm extends Component {
 
 
             <div className="inline fields">
-                <label for="fruit">Filing As</label>
+                <label>Filing As</label>
                 <div className="field">
                   <div className="ui radio checkbox">
-                    <input type="radio" name="fruit"  value="test" checked={this.state.filingJointly}  onChange={this.handleCheckClick} className="hidden"/>
-                  <label>Jointly</label>
+                  <label>Jointly
+                    <input type="radio" name="jointly" onChange={this.handleCheckClick} checked={true} className="hidden"/>
+                  </label>
                   </div>
                 </div>
             <div className="field">
               <div className="ui radio checkbox">
-                <input type="radio" name="fruit"  checked={this.state.filingJointly} onChange={this.handleCheckClick} className="hidden"/>
-                <label>Single</label>
+              <label>Single
+                <input type="radio" name="single" value="single" onChange={this.handleCheckClick} className="hidden"/>
+                </label>
                   </div>
                   </div>
       
