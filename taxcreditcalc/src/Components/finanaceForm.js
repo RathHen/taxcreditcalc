@@ -64,6 +64,8 @@ export class finanaceForm extends Component {
               <div style={this.getButtonStyle()}>
                 <button className="ui button" type="submit" >Submit</button>
               </div>
+
+
             </form>
           </React.Fragment>
         )
