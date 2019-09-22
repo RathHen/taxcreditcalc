@@ -31,44 +31,12 @@ export class finanaceForm extends Component {
 
     render() {
         return (
-          <React.Fragment>    
-            <form className="ui form" onSubmit={this.onSubmit} style={this.getFormStyle()}>
-              <div className="field" >
-                <div style={this.getFieldStyle()}>
-                  <label>Monthly Wage</label>
-                  <input type="number" name="wage" placeholder="Enter Monthly Wage" onChange={this.setWage}/>
-                </div>
-              </div>
-              <div className="field">
-                <div style={this.getFieldStyle()}>
-                  <label>Monthly Rent</label>
-                  <input type="number" name="rent" placeholder="Enter Monthly Rent" onChange={this.setRent}/>
-                </div>  
-              </div>
+          <React.Fragment>  
+<h1>
+  Housing Subsidy Calculator
+  </h1>
 
-
-
-            <div className="inline fields">
-                <label><input type="radio" name="value" onChange={this.handleCheckClick} value="yes" checked={this.state.filingJointly === "yes"}/>Jointly</label>
-                <label><input type="radio" name="value" onChange={this.handleCheckClick} value="no" checked={this.state.filingJointly === "no"}/>Single</label>
-            </div>
-
-
-
-
-              <div className="field">
-                <div style={this.getFieldStyle()}>
-                  <label>Dependents</label>
-                  <input type="number" name="rent" placeholder="Enter Dependends" onChange={this.setDependents}/>
-                </div>  
-              </div>
-              <div style={this.getButtonStyle()}>
-                <button className="ui button" type="submit" >Submit</button>
-              </div>
-              <div>
-              <h1>The housing subsidy calculator:</h1>
-
-<h2>The issue:</h2>
+            <h2>The issue:</h2>
 <p>The housing inequality crisis refers to the increasing disparity in the quality of housing in the U.S. Quality of housing includes multiple aspects, including crime rate, quality of local schools, the amenities and the amount of air pollution.</p>
 
 <h2>The solution:</h2>
@@ -79,32 +47,74 @@ export class finanaceForm extends Component {
 
 <h2>How the housing subsidy calculator works:</h2>
 <p>The calculator takes five inputs from the user:
-1.	Monthly wage
-2.	Monthly rent
-3.	Zip code
-4.	Number of dependents
-5.	Marital status
+  <ol>
+<li>Monthly wage</li>
+<li>Monthly rent</li>
+<li>Zip code</li>
+<li>Number of dependents</li>
+<li>Marital status</li></ol>
 Using the wage and rent, the calculator computes a ratio that represents the proportion of an individual’s income that’s spent on housing. This ratio is then compared with the “ideal” ratio of 1/3, and the difference between these two ratios suggests the amount of subsidy that’s required. 
 </p>
 
 
 <h1>Instructions:</h1>
-<p>
-1.	Type in your pre-tax monthly wage in the first input box below 
+<p><ol>
+<li>Type in your pre-tax monthly wage in the first input box below </li>
 [note: your monthly wage must be below $4,000 to qualify for housing subsidy]
 
-2.	Type in your monthly rent in the second box
+<li>Type in your monthly rent in the second box</li>
 
-3.	Type in your zip code; this will be used to factor the crime rate and mental health index into our calculation
+<li>Type in your zip code; this will be used to factor the crime rate and mental health index into our calculation</li>
 
-4.	Type in the number of your dependents, including the number of your children and parents that you need to provide financial support for
+<li>Type in the number of your dependents, including the number of your children and parents that you need to provide financial support for</li>
 
-5.	Select your marital status, click on the “submit” button if you’re unmarried
+<li>Select your marital status, click on the “submit” button if you’re unmarried</li>
 
-6.	If you’re married or divorced, enter the income of or financial support that you receive from the other person
-
+<li>If you’re married or divorced, enter the income of or financial support that you receive from the other person</li>
+</ol>
 See the formula that this calculator uses here.
 </p>
+
+
+            <form className="ui form" onSubmit={this.onSubmit} style={this.getFormStyle()}>
+            <h1 style={{color: "white"}}>The Housing Subsidy Calculator:</h1>
+              <div className="field" >
+                <div style={this.getFieldStyle()}>
+                  <label style={{color: "white"}}>Monthly Wage</label>
+                  <input type="number" name="wage" placeholder="Enter Monthly Wage" onChange={this.setWage}/>
+                </div>
+              </div>
+              <div className="field">
+                <div style={this.getFieldStyle()}>
+                  <label style={{color: "white"}}>Monthly Rent</label>
+                  <input type="number" name="rent" placeholder="Enter Monthly Rent" onChange={this.setRent}/>
+                </div>  
+              </div>
+
+
+
+            <div className="inline fields" style={this.getRadioStyle()}>
+                <h4 style={{color: "white"}}> Filing As</h4>
+                <label style={{color: "white"}}><input type="radio" name="value" onChange={this.handleCheckClick} value="yes" checked={this.state.filingJointly === "yes"}/>     Jointly</label>
+                <label style={{color: "white"}}><input type="radio" name="value" onChange={this.handleCheckClick} value="no" checked={this.state.filingJointly === "no"}/>    Single</label>
+            </div>
+
+
+
+
+              <div className="field">
+                <div style={this.getFieldStyle()}>
+                  <label style={{color: "white"}}>Dependents</label>
+                  <input type="number" name="rent" placeholder="Enter Dependends" onChange={this.setDependents}/>
+                </div>  
+              </div>
+              <div style={this.getButtonStyle()}>
+                <button className="ui button" type="submit" >Submit</button>
+              </div>
+              <div>
+              
+
+
 
 
               </div>
@@ -113,8 +123,18 @@ See the formula that this calculator uses here.
         )
     }
 
+    getRadioStyle = () => {
+      return {
+        width: "80%",
+        left: "50%",
+        margin: "auto",
+        color: "#E1E1E1"
+      }
+    }
+
     getButtonStyle = () => {
       return {
+        
         textAlign: "center"
       }
     }
@@ -134,7 +154,7 @@ See the formula that this calculator uses here.
         marginLeft: "auto",
         padding: "10px",
         maxWidth: "60%",
-        background: "#93B5C6",
+        background: "#B0D0D3",
         border: "solid",
         borderWidth: "8px",
         borderRadius: "10px",
