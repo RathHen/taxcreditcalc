@@ -27,6 +27,7 @@ export class finanaceForm extends Component {
       this.setState({filingJointly: e.target.value})
       console.log(this.state.filingJointly)
     }
+    
 
     render() {
         return (
