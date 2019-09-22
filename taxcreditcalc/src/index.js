@@ -3,6 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import * as firebase from 'firebase';
+
+var firebaseConfig = {
+  apiKey: "AIzaSyDZTWWMRBDVQFgmR66JgxgFWiCeiDL3RBM",
+  authDomain: "crime-rates.firebaseapp.com",
+  databaseURL: "https://crime-rates.firebaseio.com",
+  storageBucket: "crime-rates.appspot.com"
+};
+
+firebase.initializeApp(firebaseConfig)
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
