@@ -43,7 +43,7 @@ export class finanaceForm extends Component {
           <React.Fragment>  
 
             <font face="Times New Roman">
-<br></br>
+<br></br><br></br>
 <center><h1>
   Housing Subsidy Calculator
   <br></br>
@@ -132,10 +132,12 @@ See the formula that this calculator uses here.</font>
               
 
 
-
+              
 
               </div>
             </form>
+            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+            
           </React.Fragment>
         )
     }
