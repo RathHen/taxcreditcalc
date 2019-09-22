@@ -292,10 +292,10 @@ export class finanaceForm extends Component {
         if(this.state.usState != "") {
           const rootRef = firebase.database().ref().child(this.state.usState);
           rootRef.child("Population").on('value', snap => {
-            this.props.setPopulation(snap.val());
+            this.props.setPopulation(parseFloat(snap.val()));
           })
           rootRef.child("Violent").on('value', snap => {
-            this.props.setViolent(snap.val());
+            this.props.setViolent(parseFloat(snap.val()));
           })
           }
     }

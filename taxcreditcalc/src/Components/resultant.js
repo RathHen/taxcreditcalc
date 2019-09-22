@@ -21,10 +21,14 @@ export class resultants extends Component {
           var dampen = annual*3.572/100000;
           var temp = (-Math.atan(dampen-1)) + 1.2;
           var lumpTaxCredit = Math.round((temp*annual/1.985)*100)/100;
+          var vioPerCapita = (this.violent/this.population);
+
           //Apply Crime Ratio Adjustment
-          lumpTaxCredit += Math.round((this.lumpTaxCredit * (this.crimePerPop*10))*100)/100;
+          lumpTaxCredit += Math.round((this.lumpTaxCredit * (vioPerCapita*10))*100)/100;
+
           //Apply Dependent Ratio 
           lumpTaxCredit += Math.round((this.dependent * .03)*100)/100; 
+
           //Apply Jointly or Single
           if (this.filingAs === 'yes'){
             lumpTaxCredit = Math.round((lumpTaxCredit * .4)*100)/100;
