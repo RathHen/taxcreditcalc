@@ -104,8 +104,8 @@ See the formula that this calculator uses here. {this.state.usState}
 
             <div className="inline fields" >
                 <h3 style={this.styles()}> Filing As: </h3>
-                <label style={{color: "white"}}><input type="radio" name="value" onChange={this.handleCheckClick} value="yes" checked={this.state.filingJointly === "yes"}/>     Jointly</label>
-                <label style={{color: "white"}}><input type="radio" name="value" onChange={this.handleCheckClick} value="no" checked={this.state.filingJointly === "no"}/>    Single</label>
+                <label style={{color: "white", fontSize: "17px"}}><input type="radio" name="value" onChange={this.handleCheckClick} value="yes" checked={this.state.filingJointly === "yes"}/> Jointly </label>
+                <label style={{color: "white", fontSize: "17px"}}><input type="radio" name="value" onChange={this.handleCheckClick} value="no" checked={this.state.filingJointly === "no"}/>  Single</label>
             </div>
 
 
@@ -113,7 +113,7 @@ See the formula that this calculator uses here. {this.state.usState}
 
               <div className="field">
                 <div style={this.getFieldStyle()}>
-                  <label style={{color: "white"}}>Dependents</label>
+                  <label style={{color: "white", }}>Dependents</label>
                   <input type="number" name="rent" placeholder="Enter Dependends" onChange={this.setDependents}/>
                 </div>  
               </div>
@@ -171,7 +171,7 @@ See the formula that this calculator uses here. {this.state.usState}
         border: "solid",
         borderWidth: "8px",
         borderRadius: "10px",
-        borderColor: "#F0CF65"
+        borderColor: "#F4AC45"
       }
     }
 }
