@@ -41,6 +41,8 @@ export class finanaceForm extends Component {
     render() {
         return (
           <React.Fragment>  
+            <font face="Times New Roman">
+<br></br>
 <center><h1>
   Housing Subsidy Calculator
   </h1></center>
@@ -66,7 +68,7 @@ Using the wage and rent, the calculator computes a ratio that represents the pro
 </p>
 
 
-<h1>Instructions:</h1>
+<center><h1>Instructions:</h1></center>
 <p><ol>
 <li>Type in your pre-tax monthly wage in the first input box below </li>
 [note: your monthly wage must be below $4,000 to qualify for housing subsidy]
@@ -82,7 +84,7 @@ Using the wage and rent, the calculator computes a ratio that represents the pro
 <li>If you’re married or divorced, enter the income of or financial support that you receive from the other person</li>
 </ol>
 See the formula that this calculator uses here.
-</p>
+</p></font>
 
 
             <form className="ui form" onSubmit={this.onSubmit} style={this.getFormStyle()}>
