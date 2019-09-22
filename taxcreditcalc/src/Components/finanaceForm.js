@@ -415,16 +415,16 @@ Using the wage and rent, the calculator computes a ratio that represents the pro
                   <label style={{color: "white", }}>Dependents</label>
                   <input type="number" name="rent" placeholder="Enter Dependends" onChange={this.setDependents}/>
                 </div>  
-              </div>
+              </div> 
               <Dropdown
-    placeholder='Select City'
+            placeholder='Select City'
     fluid
     search
     selection
     options={this.countryOptions()}
     onChange={this.handleDropDown}
     value={this.state.usState}
-    style={{left: "50%"}, {margin:"auto"}, {maxWidth: "80%"}}
+    style={{ margin:"auto", maxWidth: "80%"}}
   />
   <br></br>
               <div style={this.getButtonStyle()}>
