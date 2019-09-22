@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
 import FinanaceForm from './finanaceForm';
 import { PARENT_MESSAGE_CLIENT_ERROR } from 'jest-worker/build/types';
+<<<<<<< HEAD
 import { thisExpression } from '@babel/types';
+=======
+import Popup from "reactjs-popup";
+>>>>>>> 7194c9bec5c6ec8b5b3d73bda189118bf75c2e79
 
 
 export class resultants extends Component {
@@ -34,6 +38,7 @@ export class resultants extends Component {
         this.result(this.state.wage,this.state.rent)
         }
       }
+
 
       
       calculate = (wage,rent) => {
@@ -68,6 +73,70 @@ export class resultants extends Component {
           this.setState({num: this.calculate(wage,rent)});
       };
 
+  PopupExample = () => (
+    <Popup trigger={<button className="button"> Methodolgy </button>} modal>
+    {close => (
+      <div className="modal">
+        <a className="close" onClick={close}>
+          &times;
+        </a>
+        <div className="header"> Methodolgy </div>
+        <div className="content">
+          {" "}
+          
+          <br />
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur sit
+          commodi beatae optio voluptatum sed eius cumque, delectus saepe repudiandae
+          explicabo nemo nam libero ad, doloribus, voluptas rem alias. Vitae?
+        </div>
+          <button
+            className="button"
+            onClick={() => {
+              console.log("modal closed ");
+              close();
+            }}
+          >
+            Close
+          </button>
+        </div>
+    )}
+  </Popup>
+);
+
+// .modal {
+//   font-size: 12px;
+// }
+// .modal > .header {
+//   width: 100%;
+//   border-bottom: 1px solid gray;
+//   font-size: 18px;
+//   text-align: center;
+//   padding: 5px;
+// }
+// .modal > .content {
+//   width: 100%;
+//   padding: 10px 5px;
+// }
+// .modal > .actions {
+//   width: 100%;
+//   padding: 10px 5px;
+//   margin: auto;
+//   text-align: center;
+// }
+// .modal > .close {
+//   cursor: pointer;
+//   position: absolute;
+//   display: block;
+//   padding: 2px 5px;
+//   line-height: 20px;
+//   right: -10px;
+//   top: -10px;
+//   font-size: 24px;
+//   background: #ffffff;
+//   border-radius: 18px;
+//   border: 1px solid #cfcece;
+// }
+
 
     
     
@@ -80,9 +149,16 @@ export class resultants extends Component {
                   <h3>Violent Crimes per capita: {this.state.violent/100000}</h3>
 
                   <h3> Number of Dependents: {this.state.dependent}</h3>
+                {this.PopupExample()}
                 </div>
+                
             )
+
         }
+     
+          
+        
+        
         return (
           
           <div>

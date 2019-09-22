@@ -152,7 +152,6 @@ export class finanaceForm extends Component {
 { key: 'LOS ANGELES, CALIFORNIA', value: 'LOS ANGELES, CALIFORNIA', text: 'LOS ANGELES, CALIFORNIA' },
 { key: 'LOWELL, MASSACHUSETTS', value: 'LOWELL, MASSACHUSETTS', text: 'LOWELL, MASSACHUSETTS' },
 { key: 'LUBBOCK, TEXAS', value: 'LUBBOCK, TEXAS', text: 'LUBBOCK, TEXAS' },
-{ key: 'MADI+B1:B261SON, WISCONSIN', value: 'MADI+B1:B261SON, WISCONSIN', text: 'MADI+B1:B261SON, WISCONSIN' },
 { key: 'MADISON, WISCONSIN', value: 'MADISON, WISCONSIN', text: 'MADISON, WISCONSIN' },
 { key: 'MANCHESTER, NEW HAMPSHIRE', value: 'MANCHESTER, NEW HAMPSHIRE', text: 'MANCHESTER, NEW HAMPSHIRE' },
 { key: 'MCALLEN, TEXAS', value: 'MCALLEN, TEXAS', text: 'MCALLEN, TEXAS' },
@@ -415,17 +414,18 @@ Using the wage and rent, the calculator computes a ratio that represents the pro
                   <label style={{color: "white", }}>Dependents</label>
                   <input type="number" name="rent" placeholder="Enter Dependends" onChange={this.setDependents}/>
                 </div>  
-              </div>
+              </div> 
+              <label style={{color: "white", fontSize: "15px", marginLeft: "10%"}}> Select Location</label>
               <Dropdown
-    placeholder='Select City'
+            placeholder='Select City'
     fluid
     search
     selection
     options={this.countryOptions()}
     onChange={this.handleDropDown}
     value={this.state.usState}
-    style={{left: "50%"}, {margin:"auto"}, {maxWidth: "80%"}}
-  />
+    style={{ margin:"auto", maxWidth: "80%"}}
+  /> 
   <br></br>
               <div style={this.getButtonStyle()}>
                 <button className="ui button" type="submit" >Submit</button>
