@@ -41,9 +41,9 @@ export class finanaceForm extends Component {
     render() {
         return (
           <React.Fragment>  
-<h1>
+<center><h1>
   Housing Subsidy Calculator
-  </h1>
+  </h1></center>
 
             <h2>The issue:</h2>
 <p>The housing inequality crisis refers to the increasing disparity in the quality of housing in the U.S. Quality of housing includes multiple aspects, including crime rate, quality of local schools, the amenities and the amount of air pollution.</p>
@@ -81,7 +81,7 @@ Using the wage and rent, the calculator computes a ratio that represents the pro
 
 <li>If you’re married or divorced, enter the income of or financial support that you receive from the other person</li>
 </ol>
-See the formula that this calculator uses here. {this.state.usState}
+See the formula that this calculator uses here.
 </p>
 
 
