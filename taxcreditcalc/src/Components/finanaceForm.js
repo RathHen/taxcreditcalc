@@ -12,7 +12,9 @@ export class finanaceForm extends Component {
         monthlyRent: 0,
         dependents: 0,
         filingJointly: "",
-        usState: ""
+        usState: "",
+        population: 0,
+        violent: 0
 
     }
     
@@ -286,7 +288,16 @@ export class finanaceForm extends Component {
         e.preventDefault();
         this.props.result(this.state.monthlyWage, this.state.monthlyRent);
         this.props.dependent(this.state.dependents);
-        // this.props.filing(this.state.filingAs);
+        this.props.filing(this.state.filingJointly);
+        if(this.state.usState != "") {
+          const rootRef = firebase.database().ref().child(this.state.usState);
+          rootRef.child("Population").on('value', snap => {
+            this.props.setPopulation(snap.val());
+          })
+          rootRef.child("Violent").on('value', snap => {
+            this.props.setViolent(snap.val());
+          })
+          }
     }
 
     setWage = (e) => this.setState({monthlyWage: e.target.value})
@@ -298,8 +309,7 @@ export class finanaceForm extends Component {
     }
 
     componentDidMount() {
-      const rootRef = firebase.database().ref();
-      
+    
     }
 
     handleDropDown = (e, { value }) => {
