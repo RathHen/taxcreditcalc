@@ -74,25 +74,28 @@ Using the wage and rent, the calculator computes a ratio that represents the pro
 See the formula that this calculator uses here.
 </p>
 
+
             <form className="ui form" onSubmit={this.onSubmit} style={this.getFormStyle()}>
+            <h1 style={{color: "white"}}>The Housing Subsidy Calculator:</h1>
               <div className="field" >
                 <div style={this.getFieldStyle()}>
-                  <label>Monthly Wage</label>
+                  <label style={{color: "white"}}>Monthly Wage</label>
                   <input type="number" name="wage" placeholder="Enter Monthly Wage" onChange={this.setWage}/>
                 </div>
               </div>
               <div className="field">
                 <div style={this.getFieldStyle()}>
-                  <label>Monthly Rent</label>
+                  <label style={{color: "white"}}>Monthly Rent</label>
                   <input type="number" name="rent" placeholder="Enter Monthly Rent" onChange={this.setRent}/>
                 </div>  
               </div>
 
 
 
-            <div className="inline fields">
-                <label><input type="radio" name="value" onChange={this.handleCheckClick} value="yes" checked={this.state.filingJointly === "yes"}/>Jointly</label>
-                <label><input type="radio" name="value" onChange={this.handleCheckClick} value="no" checked={this.state.filingJointly === "no"}/>Single</label>
+            <div className="inline fields" style={this.getRadioStyle()}>
+                <h4 style={{color: "white"}}> Filing As</h4>
+                <label style={{color: "white"}}><input type="radio" name="value" onChange={this.handleCheckClick} value="yes" checked={this.state.filingJointly === "yes"}/>     Jointly</label>
+                <label style={{color: "white"}}><input type="radio" name="value" onChange={this.handleCheckClick} value="no" checked={this.state.filingJointly === "no"}/>    Single</label>
             </div>
 
 
@@ -100,7 +103,7 @@ See the formula that this calculator uses here.
 
               <div className="field">
                 <div style={this.getFieldStyle()}>
-                  <label>Dependents</label>
+                  <label style={{color: "white"}}>Dependents</label>
                   <input type="number" name="rent" placeholder="Enter Dependends" onChange={this.setDependents}/>
                 </div>  
               </div>
@@ -108,7 +111,7 @@ See the formula that this calculator uses here.
                 <button className="ui button" type="submit" >Submit</button>
               </div>
               <div>
-              <h1>The housing subsidy calculator:</h1>
+              
 
 
 
@@ -119,8 +122,18 @@ See the formula that this calculator uses here.
         )
     }
 
+    getRadioStyle = () => {
+      return {
+        width: "80%",
+        left: "50%",
+        margin: "auto",
+        color: "#E1E1E1"
+      }
+    }
+
     getButtonStyle = () => {
       return {
+        
         textAlign: "center"
       }
     }
@@ -140,7 +153,7 @@ See the formula that this calculator uses here.
         marginLeft: "auto",
         padding: "10px",
         maxWidth: "60%",
-        background: "#93B5C6",
+        background: "#B0D0D3",
         border: "solid",
         borderWidth: "8px",
         borderRadius: "10px",
