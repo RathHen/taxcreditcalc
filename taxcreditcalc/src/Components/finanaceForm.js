@@ -31,7 +31,7 @@ export class finanaceForm extends Component {
     render() {
         return (
           <React.Fragment>  
-<h1 style="margin-left:10%; margin-right:10%;">Housing Subsidy Calculator</h1>
+<h1>Housing Subsidy Calculator</h1>
 
             <h2>The issue:</h2>
 <p>The housing inequality crisis refers to the increasing disparity in the quality of housing in the U.S. Quality of housing includes multiple aspects, including crime rate, quality of local schools, the amenities and the amount of air pollution.</p>
