@@ -10,8 +10,31 @@ export class resultants extends Component {
         dependent: 0,
         filingAs: ' ',
         population: 0.0,
-        violent: 0.0
-      };
+        violent: 0.0,
+        wage: 0.0,
+        rent: 0.0,
+      }
+
+      chainCall = (dependentsNum,filingAns,v,p,wage,rent)  => {
+        this.setState(
+        {
+          dependent: dependentsNum,
+          filingAs: filingAns,
+          violent: v,
+          population: p,
+          wage: wage,
+          rent: rent
+        }, function() {console.log("setState completed", this.state)})
+      }
+
+      componentDidUpdate(props) {
+
+        if(this.state.num ===0) {
+        this.result(this.state.wage,this.state.rent)
+        }
+      }
+
+      
       calculate = (wage,rent) => {
         var w = parseFloat(wage);
         var r = parseFloat(rent);
@@ -21,18 +44,22 @@ export class resultants extends Component {
           var dampen = annual*3.572/100000;
           var temp = (-Math.atan(dampen-1)) + 1.2;
           var lumpTaxCredit = Math.round((temp*annual/1.985)*100)/100;
-          var vioPerCapita = (this.violent/this.population);
-
+          var vioPerCapita = (this.state.violent/this.state.population);
+        
+          
           //Apply Crime Ratio Adjustment
-          lumpTaxCredit += Math.round((this.lumpTaxCredit * (vioPerCapita*10))*100)/100;
+          lumpTaxCredit += Math.round((lumpTaxCredit * (vioPerCapita*10))*100)/100;
+        
 
           //Apply Dependent Ratio 
-          lumpTaxCredit += Math.round((this.dependent * .03)*100)/100; 
+          lumpTaxCredit += Math.round((this.state.dependent * .03)*100)/100; 
+       
 
           //Apply Jointly or Single
-          if (this.filingAs === 'yes'){
+          if (this.state.filingAs === 'yes'){
             lumpTaxCredit = Math.round((lumpTaxCredit * .4)*100)/100;
           } 
+          
           return lumpTaxCredit;
         }
     };
@@ -40,21 +67,7 @@ export class resultants extends Component {
           this.setState({num: this.calculate(wage,rent)});
       };
 
-      dependents = (dependentsNum) => {
-        this.setState({dependent: dependentsNum});
-      };
-
-      filing = (filingAns) => {
-        this.setState({filingAs: filingAns});
-      }
-
-      setViolent = (v) => {
-        this.setState({violent: v})
-      }
-      
-      setPopulation = (p) => {
-        this.setState({population: p})
-      }
+     
 
 
     
@@ -73,7 +86,7 @@ export class resultants extends Component {
           
           <div>
             <React.Fragment>  
-              <FinanaceForm result={this.result} dependent={this.dependents} filing={this.filing} setPopulation={this.setPopulation} setViolent={this.setViolent} />
+              <FinanaceForm chainCall={this.chainCall} />
             </React.Fragment>
 
           </div>

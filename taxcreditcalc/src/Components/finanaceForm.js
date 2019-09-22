@@ -286,18 +286,21 @@ export class finanaceForm extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        this.props.result(this.state.monthlyWage, this.state.monthlyRent);
-        this.props.dependent(this.state.dependents);
-        this.props.filing(this.state.filingJointly);
+        var pop = 0.0;
+        var vio = 0.0;
         if(this.state.usState != "") {
           const rootRef = firebase.database().ref().child(this.state.usState);
           rootRef.child("Population").on('value', snap => {
-            this.props.setPopulation(parseFloat(snap.val()));
+            pop = snap.val();
           })
           rootRef.child("Violent").on('value', snap => {
-            this.props.setViolent(parseFloat(snap.val()));
+            vio = snap.val();
           })
           }
+
+          this.props.chainCall(this.state.dependents,this.state.filingJointly,this.state.violent,this.state.population,this.state.monthlyWage,this.state.monthlyRent)
+
+  
     }
 
     setWage = (e) => this.setState({monthlyWage: e.target.value})
@@ -314,6 +317,14 @@ export class finanaceForm extends Component {
 
     handleDropDown = (e, { value }) => {
       this.setState({usState: value})
+      const rootRef = firebase.database().ref().child(value);
+          rootRef.child("Population").on('value', snap => {
+            this.setState({population: snap.val()})
+          })
+          rootRef.child("Violent").on('value', snap => {
+            this.setState({violent: snap.val()})
+          })
+    
     }
 
   
