@@ -3,6 +3,7 @@ import { thisExpression } from '@babel/types';
 import PropTypes from 'prop-types';
 import { SSL_OP_SINGLE_DH_USE } from 'constants';
 import * as firebase from 'firebase';
+import { Dropdown } from 'semantic-ui-react'
 
 
 export class finanaceForm extends Component {
@@ -12,7 +13,16 @@ export class finanaceForm extends Component {
         dependents: 0,
         filingJointly: "",
         usState: ""
+
     }
+    
+
+    countryOptions = () => [
+      { key: 'te', value: 'te', text: 'Test Islands' },
+      { key: 'af', value: 'af', text: 'Afghanistan' },
+      { key: 'ax', value: 'ax', text: 'Aland Islands' }
+    ]
+  
 
     onSubmit = (e) => {
         e.preventDefault();
@@ -27,7 +37,6 @@ export class finanaceForm extends Component {
 
     handleCheckClick = (e) => {
       this.setState({filingJointly: e.target.value})
-      console.log(this.state.filingJointly)
     }
 
     componentDidMount() {
@@ -36,7 +45,12 @@ export class finanaceForm extends Component {
       cityRef.on('value', snap => { this.setState({usState: snap.val()});
       });
     }
-    
+
+    handleDropDown = (e, { value }) => {
+      this.setState({usState: value})
+    }
+
+  
 
     render() {
         return (
@@ -120,13 +134,28 @@ See the formula that this calculator uses here. {this.state.usState}
               <div style={this.getButtonStyle()}>
                 <button className="ui button" type="submit" >Submit</button>
               </div>
-              <div>
-              
+       
+          
+
+
+ 
+  <Dropdown
+    placeholder='Select Country'
+    fluid
+    search
+    selection
+    options={this.countryOptions()}
+    onChange={this.handleDropDown}
+    value={this.state.usState}
+  />
+
+
+  
+          
 
 
 
-
-              </div>
+  
             </form>
           </React.Fragment>
         )

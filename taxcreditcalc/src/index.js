@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import * as firebase from 'firebase';
+import 'semantic-ui-css/semantic.min.css';
 
 var firebaseConfig = {
   apiKey: "AIzaSyDZTWWMRBDVQFgmR66JgxgFWiCeiDL3RBM",
