@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import FinanaceForm from './finanaceForm';
 import { PARENT_MESSAGE_CLIENT_ERROR } from 'jest-worker/build/types';
+import { thisExpression } from '@babel/types';
 
 
 export class resultants extends Component {
@@ -59,21 +60,12 @@ export class resultants extends Component {
           if (this.state.filingAs === 'yes'){
             lumpTaxCredit = Math.round((lumpTaxCredit * .4)*100)/100;
           } 
-          
+          this.setState({calculated: lumpTaxCredit})
           return  lumpTaxCredit;
         }
     };
       result = (wage, rent) => {
           this.setState({num: this.calculate(wage,rent)});
-      };
-
-      resultStyling = () => {
-        return {
-          
-
-
-
-        }
       };
 
 
@@ -82,10 +74,12 @@ export class resultants extends Component {
       render() {
         if(this.state.num !== 0) {
             return (
-                <div>
-                  <h3>{this.state.num}</h3>
-                  <h3> Number of Dependents: {this.state.dependent}</h3>
+                <div style={this.getPStyle()}>
+                  <h2>Annual Housing Subsity: ${Math.round(this.state.calculated*100)/100}</h2>
+                  <h2>Monthly Housing Subsity: ${Math.round(this.state.calculated/12*100)/100}</h2>
+                  <h3>Violent Crimes per capita: {this.state.violent/100000}</h3>
 
+                  <h3> Number of Dependents: {this.state.dependent}</h3>
                 </div>
             )
         }
@@ -99,6 +93,20 @@ export class resultants extends Component {
           </div>
 
         )
+      }
+
+      getPStyle = () => {
+        return {
+          marginRight: "auto",
+          marginLeft: "auto",
+          padding: "10px",
+          maxWidth: "60%",
+          background: "#B0D0D3",
+          border: "solid",
+          borderWidth: "8px",
+          borderRadius: "10px",
+          borderColor: "#F4AC45"
+        }
       }
   
 }
