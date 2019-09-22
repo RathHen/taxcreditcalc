@@ -424,6 +424,7 @@ Using the wage and rent, the calculator computes a ratio that represents the pro
     options={this.countryOptions()}
     onChange={this.handleDropDown}
     value={this.state.usState}
+    style={{left: "50%"}, {margin:"auto"}, {maxWidth: "80%"}}
   />
   <br></br>
               <div style={this.getButtonStyle()}>
