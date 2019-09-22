@@ -106,15 +106,6 @@ export class resultants extends Component {
     )}
   </Popup>
 );
-
-// .modal > .actions {
-//   width: 100%;
-//   padding: 10px 5px;
-//   margin: auto;
-//   text-align: center;
-// }  
-    
-
       render() {
         if(this.state.num !== 0) {
             return (
