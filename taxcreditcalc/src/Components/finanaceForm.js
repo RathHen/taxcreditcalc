@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { thisExpression } from '@babel/types';
 import PropTypes from 'prop-types';
 import { SSL_OP_SINGLE_DH_USE } from 'constants';
+import * as firebase from 'firebase';
 
 
 export class finanaceForm extends Component {
@@ -9,7 +10,8 @@ export class finanaceForm extends Component {
         monthlyWage: 0,
         monthlyRent: 0,
         dependents: 0,
-        filingJointly: ""
+        filingJointly: "",
+        usState: ""
     }
 
     onSubmit = (e) => {
@@ -26,6 +28,13 @@ export class finanaceForm extends Component {
     handleCheckClick = (e) => {
       this.setState({filingJointly: e.target.value})
       console.log(this.state.filingJointly)
+    }
+
+    componentDidMount() {
+      const rootRef = firebase.database().ref().child("AKRON");
+      const cityRef = rootRef.child("State");
+      cityRef.on('value', snap => { this.setState({usState: snap.val()});
+      });
     }
     
 
@@ -72,7 +81,7 @@ Using the wage and rent, the calculator computes a ratio that represents the pro
 
 <li>If you’re married or divorced, enter the income of or financial support that you receive from the other person</li>
 </ol>
-See the formula that this calculator uses here.
+See the formula that this calculator uses here. {this.state.usState}
 </p>
 
 
