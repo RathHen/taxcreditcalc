@@ -20,7 +20,7 @@ export class finanaceForm extends Component {
     countryOptions = () => [
       { key: 'te', value: 'te', text: 'Test Islands' },
       { key: 'af', value: 'af', text: 'Afghanistan' },
-      { key: 'ax', value: 'ax', text: 'Aland Islands' }
+      { key: 'ax', value: 'ax', text: 'Aland Islands' }gi
     ]
   
 
@@ -144,7 +144,6 @@ See the formula that this calculator uses here.</font>
           
 
 
-<<<<<<< HEAD
  
   <Dropdown
     placeholder='Select Country'
@@ -156,9 +155,6 @@ See the formula that this calculator uses here.</font>
     value={this.state.usState}
   />
 
-=======
-              
->>>>>>> 03f97cf2e50f6324330d97bc82e755b5796d5eac
 
   
           
