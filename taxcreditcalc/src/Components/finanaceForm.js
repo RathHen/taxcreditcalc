@@ -77,7 +77,7 @@ See the formula that this calculator uses here.
 
 
             <form className="ui form" onSubmit={this.onSubmit} style={this.getFormStyle()}>
-            <h1 style={{color: "white"}}>The Housing Subsidy Calculator:</h1>
+            <h1 style={{color: "white", marginLeft: "23%"}}>The Housing Subsidy Calculator</h1>
               <div className="field" >
                 <div style={this.getFieldStyle()}>
                   <label style={{color: "white"}}>Monthly Wage</label>
@@ -93,8 +93,8 @@ See the formula that this calculator uses here.
 
 
 
-            <div className="inline fields" style={this.getRadioStyle()}>
-                <h4 style={{color: "white"}}> Filing As</h4>
+            <div className="inline fields" >
+                <h3 style={this.styles()}> Filing As: </h3>
                 <label style={{color: "white"}}><input type="radio" name="value" onChange={this.handleCheckClick} value="yes" checked={this.state.filingJointly === "yes"}/>     Jointly</label>
                 <label style={{color: "white"}}><input type="radio" name="value" onChange={this.handleCheckClick} value="no" checked={this.state.filingJointly === "no"}/>    Single</label>
             </div>
@@ -123,14 +123,18 @@ See the formula that this calculator uses here.
         )
     }
 
-    getRadioStyle = () => {
+   styles = () => {
       return {
-        width: "80%",
-        left: "50%",
-        margin: "auto",
-        color: "#E1E1E1"
+          width: 'auto',
+          height: 'auto',
+          display: 'flex',
+          flexWrap: 'nowrap',
+          flexDirection: 'row',
+          margin: '5px',
+          color: 'white',
+          marginLeft: "35%"
       }
-    }
+  }
 
     getButtonStyle = () => {
       return {
