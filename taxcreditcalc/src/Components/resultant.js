@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import FinanaceForm from './finanaceForm';
 import { PARENT_MESSAGE_CLIENT_ERROR } from 'jest-worker/build/types';
 import Popup from "reactjs-popup";
-import { Dropdown } from 'semantic-ui-react'
 
 
 export class resultants extends Component {
@@ -73,12 +72,12 @@ export class resultants extends Component {
   PopupExample = () => (
     <Popup trigger={<button className="button"> Methodolgy </button>} modal>
     {close => (
-      <div className="modal" >
-        <a className="close" >
+      <div className="modal">
+        <a className="close" onClick={close}>
           &times;
         </a>
-        <div className="header" > Methodolgy </div>
-        <div className="content" >
+        <div className="header"> Methodolgy </div>
+        <div className="content">
           {" "}
           The methodology behind the calculator is a formula combined with "adjustments" in order to best help the housing inequality crisis.  Monthly Age and Rent are entered. This ratio
           between this is then used against the 1/3 rule of thumb for renting . Note: Ratios above 1/3 or Income above 100,000 do not qualify. The difference of ratio (Ratio - 1/3) is then multiplied with annual income to get Lump Sum.
@@ -106,6 +105,44 @@ export class resultants extends Component {
     )}
   </Popup>
 );
+
+// .modal {
+//   font-size: 12px;
+// }
+// .modal > .header {
+//   width: 100%;
+//   border-bottom: 1px solid gray;
+//   font-size: 18px;
+//   text-align: center;
+//   padding: 5px;
+// }
+// .modal > .content {
+//   width: 100%;
+//   padding: 10px 5px;
+// }
+// .modal > .actions {
+//   width: 100%;
+//   padding: 10px 5px;
+//   margin: auto;
+//   text-align: center;
+// }
+// .modal > .close {
+//   cursor: pointer;
+//   position: absolute;
+//   display: block;
+//   padding: 2px 5px;
+//   line-height: 20px;
+//   right: -10px;
+//   top: -10px;
+//   font-size: 24px;
+//   background: #ffffff;
+//   border-radius: 18px;
+//   border: 1px solid #cfcece;
+// }
+
+
+    
+    
       render() {
         if(this.state.num !== 0) {
             return (
@@ -139,7 +176,6 @@ export class resultants extends Component {
 
       getPStyle = () => {
         return {
-          textAlign: "center",
           marginRight: "auto",
           marginLeft: "auto",
           padding: "10px",
@@ -148,7 +184,8 @@ export class resultants extends Component {
           border: "solid",
           borderWidth: "8px",
           borderRadius: "10px",
-          borderColor: "##1C3144"
+          borderColor: "#1C3144",
+          textAlign: "center"
         }
       }
   
