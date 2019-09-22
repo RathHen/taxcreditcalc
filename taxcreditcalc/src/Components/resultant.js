@@ -80,11 +80,18 @@ export class resultants extends Component {
         <div className="header" > Methodolgy </div>
         <div className="content" >
           {" "}
-          
+          The methodology behind the calculator is a formula combined with "adjustments" in order to best help the housing inequality crisis.  Monthly Age and Rent are entered. This ratio
+          between this is then used against the 1/3 rule of thumb for renting . Note: Ratios above 1/3 or Income above 100,000 do not qualify. The difference of ratio (Ratio - 1/3) is then multiplied with annual income to get Lump Sum.
+          This lump sum, however, faces a high wage dampener. Formula = (Annnual Wage/ 100,000) * 3.57 to get X which is placed into -tan^(-1)(x-1.) +1.2 = y. Then, (Y/1.985) * annual lump subsidy to get the result. The reason this 
+          certain formula is done rather than just a linear model is to address the housing inequality. Poor people are disproportionately affected by it, and so this function helps represent this disproportionality.
+
           <br />
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur sit
-          commodi beatae optio voluptatum sed eius cumque, delectus saepe repudiandae
-          explicabo nemo nam libero ad, doloribus, voluptas rem alias. Vitae?
+          <br></br>
+          At this state, 3 more of the given "adjustments" are done. 1. If filing jointly, the lump sum is then only worth 40% to take in account dual income. 2. For each dependent, the lump sum
+          increases by 3 of the lump sum's value. The percentage is the result of our data analysis showing that there is a correlation between higher household numbers and housing inequality. 
+          3. Creating a database with data of crime statistics gathered from the FBI 2017 Uniform crime reports, we derive the violent crimes per capita and multiply this percentage by 10. Varying based on which city 
+          the user chooses, a higher percentage tells us that the location is not as safe, thus the lump sum is then increased the result of the lump sum multiplied with the percentage. 
+          
         </div>
           <button
             className="button"
