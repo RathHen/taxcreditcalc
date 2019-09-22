@@ -60,14 +60,21 @@ export class resultants extends Component {
             lumpTaxCredit = Math.round((lumpTaxCredit * .4)*100)/100;
           } 
           
-          return lumpTaxCredit;
+          return  lumpTaxCredit;
         }
     };
       result = (wage, rent) => {
           this.setState({num: this.calculate(wage,rent)});
       };
 
-     
+      resultStyling = () => {
+        return {
+          
+
+
+
+        }
+      };
 
 
     

@@ -380,7 +380,7 @@ Using the wage and rent, the calculator computes a ratio that represents the pro
 <br></br>
 <li>If you’re married or divorced, enter the income of or financial support that you receive from the other person.</li>
 </ol><br></br>
-See the formula that this calculator uses here.</font>
+</font>
 </p></font>
 <br></br><br></br><br></br>
 
