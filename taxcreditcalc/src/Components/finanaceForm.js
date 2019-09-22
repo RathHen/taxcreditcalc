@@ -424,6 +424,7 @@ See the formula that this calculator uses here.</font>
     options={this.countryOptions()}
     onChange={this.handleDropDown}
     value={this.state.usState}
+    style={{left: "50%"}, {margin:"auto"}, {maxWidth: "80%"}}
   />
   <br></br>
               <div style={this.getButtonStyle()}>
