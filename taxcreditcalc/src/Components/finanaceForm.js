@@ -31,10 +31,8 @@ export class finanaceForm extends Component {
     }
 
     componentDidMount() {
-      const rootRef = firebase.database().ref().child("AKRON");
-      const cityRef = rootRef.child("State");
-      cityRef.on('value', snap => { this.setState({usState: snap.val()});
-      });
+      const rootRef = firebase.database().ref();
+      
     }
     
 
