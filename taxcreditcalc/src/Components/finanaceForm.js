@@ -47,29 +47,29 @@ export class finanaceForm extends Component {
 <h2>How the housing subsidy calculator works:</h2>
 <p>The calculator takes five inputs from the user:
   <ol>
-<li>1.	Monthly wage</li>
-<li>2.	Monthly rent</li>
-<li>3.	Zip code</li>
-<li>4.	Number of dependents</li>
-<li>5.	Marital status</li></ol>
+<li>Monthly wage</li>
+<li>Monthly rent</li>
+<li>Zip code</li>
+<li>Number of dependents</li>
+<li>Marital status</li></ol>
 Using the wage and rent, the calculator computes a ratio that represents the proportion of an individual’s income that’s spent on housing. This ratio is then compared with the “ideal” ratio of 1/3, and the difference between these two ratios suggests the amount of subsidy that’s required. 
 </p>
 
 
 <h1>Instructions:</h1>
 <p><ol>
-<li>1.	Type in your pre-tax monthly wage in the first input box below </li>
+<li>Type in your pre-tax monthly wage in the first input box below </li>
 [note: your monthly wage must be below $4,000 to qualify for housing subsidy]
 
-<li>2.	Type in your monthly rent in the second box</li>
+<li>Type in your monthly rent in the second box</li>
 
-<li>3.	Type in your zip code; this will be used to factor the crime rate and mental health index into our calculation</li>
+<li>Type in your zip code; this will be used to factor the crime rate and mental health index into our calculation</li>
 
-<li>4.	Type in the number of your dependents, including the number of your children and parents that you need to provide financial support for</li>
+<li>Type in the number of your dependents, including the number of your children and parents that you need to provide financial support for</li>
 
-<li>5.	Select your marital status, click on the “submit” button if you’re unmarried</li>
+<li>Select your marital status, click on the “submit” button if you’re unmarried</li>
 
-<li>6.	If you’re married or divorced, enter the income of or financial support that you receive from the other person</li>
+<li>If you’re married or divorced, enter the income of or financial support that you receive from the other person</li>
 </ol>
 See the formula that this calculator uses here.
 </p>
