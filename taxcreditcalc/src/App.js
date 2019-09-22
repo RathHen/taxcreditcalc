@@ -14,6 +14,7 @@ class App extends Component {
       this.state.taxCredit = parseInt(wage) + parseInt(rent);
   };
   
+  
 
   render() {
     return (
