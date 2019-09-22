@@ -334,7 +334,7 @@ export class finanaceForm extends Component {
 
             <font face="Times New Roman">
 <br></br><br></br>
-<center><h1>
+<center><h1 >
   Housing Subsidy Calculator
   <br></br>
   </h1></center>
@@ -384,16 +384,16 @@ Using the wage and rent, the calculator computes a ratio that represents the pro
 <br></br><br></br><br></br>
 
             <form className="ui form" onSubmit={this.onSubmit} style={this.getFormStyle()}>
-            <h1 style={{color: "white", marginLeft: "23%"}}>The Housing Subsidy Calculator</h1>
+            <h1 style={{color: "#1C3144", marginLeft: "29%"}}>The Housing Subsidy Calculator</h1>
               <div className="field" >
                 <div style={this.getFieldStyle()}>
-                  <label style={{color: "white"}}>Monthly Wage</label>
+                  <label style={{color: "#1C3144"}}>Monthly Wage</label>
                   <input type="number" name="wage" placeholder="Enter Monthly Wage" autoComplete="off" onChange={this.setWage}/>
                 </div>
               </div>
               <div className="field">
                 <div style={this.getFieldStyle()}>
-                  <label style={{color: "white"}}>Monthly Rent</label>
+                  <label style={{color: "#1C3144"}}>Monthly Rent</label>
                   <input type="number" name="rent" placeholder="Enter Monthly Rent" autoComplete="off" onChange={this.setRent}/>
                 </div>  
               </div>
@@ -402,8 +402,8 @@ Using the wage and rent, the calculator computes a ratio that represents the pro
 
             <div className="inline fields" >
                 <h3 style={this.styles()}> Filing As: </h3>
-                <label style={{color: "white", fontSize: "17px"}}><input type="radio" name="value" onChange={this.handleCheckClick} value="yes" checked={this.state.filingJointly === "yes"}/> Jointly </label>
-                <label style={{color: "white", fontSize: "17px"}}><input type="radio" name="value" onChange={this.handleCheckClick} value="no" checked={this.state.filingJointly === "no"}/>  Single</label>
+                <label style={{color: "##1C3144", fontSize: "17px"}}><input type="radio" name="value" onChange={this.handleCheckClick} value="yes" checked={this.state.filingJointly === "yes"}/> Jointly </label>
+                <label style={{color: "##1C3144", fontSize: "17px"}}><input type="radio" name="value" onChange={this.handleCheckClick} value="no" checked={this.state.filingJointly === "no"}/>  Single</label>
             </div>
 
 
@@ -411,11 +411,11 @@ Using the wage and rent, the calculator computes a ratio that represents the pro
 
               <div className="field">
                 <div style={this.getFieldStyle()}>
-                  <label style={{color: "white", }}>Dependents</label>
+                  <label style={{color: "#1C3144", }}>Dependents</label>
                   <input type="number" name="rent" placeholder="Enter Dependends" onChange={this.setDependents}/>
                 </div>  
               </div> 
-              <label style={{color: "white", fontSize: "15px", marginLeft: "10%"}}> Select Location</label>
+              <label style={{color: "#1C3144", fontSize: "15px", marginLeft: "10%"}}> Select Location</label>
               <Dropdown
             placeholder='Select City'
     fluid
@@ -457,14 +457,14 @@ Using the wage and rent, the calculator computes a ratio that represents the pro
           flexWrap: 'nowrap',
           flexDirection: 'row',
           margin: '5px',
-          color: 'white',
+          color: '#1C3144',
           marginLeft: "35%"
       }
   }
 
     getButtonStyle = () => {
       return {
-        
+        color: 'white',
         textAlign: "center"
       }
     }
@@ -488,7 +488,7 @@ Using the wage and rent, the calculator computes a ratio that represents the pro
         border: "solid",
         borderWidth: "8px",
         borderRadius: "10px",
-        borderColor: "#F4AC45"
+        borderColor: "#1C3144"
       }
     }
 }

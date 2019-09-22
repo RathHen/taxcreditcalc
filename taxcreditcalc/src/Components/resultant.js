@@ -157,7 +157,7 @@ export class resultants extends Component {
           border: "solid",
           borderWidth: "8px",
           borderRadius: "10px",
-          borderColor: "#F4AC45"
+          borderColor: "##1C3144"
         }
       }
   
