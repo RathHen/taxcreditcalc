@@ -19,7 +19,16 @@ export class resultants extends Component {
           var annual = (ratio*w - w*(1.0/3)) * 12;
           var dampen = annual*3.572/100000;
           var temp = (-Math.atan(dampen-1)) + 1.2;
-          return Math.round((temp*annual/1.985)*100)/100;
+          var lumpTaxCredit = Math.round((temp*annual/1.985)*100)/100;
+          //Apply Crime Ratio Adjustment
+          lumpTaxCredit += Math.round((this.lumpTaxCredit * (this.crimePerPop*10))*100)/100;
+          //Apply Dependent Ratio 
+          lumpTaxCredit += Math.round((this.dependent * .03)*100)/100; 
+          //Apply Jointly or Single
+          if (this.filingAs === 'yes'){
+            lumpTaxCredit = Math.round((lumpTaxCredit * .4)*100)/100;
+          } 
+          return lumpTaxCredit;
         }
     };
       result = (wage, rent) => {
